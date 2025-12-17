@@ -1,0 +1,388 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/>
+PREFIX atc: <https://www.whocc.no/atc_ddd_index/?code=>
+PREFIX anno: <http://aidava.eu/annotations/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX aidava: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/>
+PREFIX sphn: <https://biomedit.ch/rdf/sphn-ontology/sphn#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX snomed: <http://snomed.info/id/>
+
+# pID, age at diagnosis, sex, prior ipsilateral BC
+# diagnosis, date of diagnosis, radiological tumor size, laterality, topography
+# ct, cn, cm,
+# grade, progesterone, estrogen
+# date of surgery, type of surgery
+SELECT DISTINCT (strafter(STR(?patient), "https://rdf.aidava.eu/resource/Patient/") AS ?patientId)
+((?diagnosis_date - ?BirthDateTime) AS ?age_at_diagnosis) ?sex ?prior_bc
+
+(GROUP_CONCAT(DISTINCT ?diagnosis_code; SEPARATOR="; ") AS ?diagnosis_codes) (GROUP_CONCAT(DISTINCT ?diagnosis_label; SEPARATOR="; ") AS ?diagnosis_labels)
+(GROUP_CONCAT(DISTINCT ?diagnosis_date; SEPARATOR="; ") AS ?diagnosis_dates)
+
+?size_of_neoplasm ?unit_size_of_neoplasm ?laterality ?topography ?tnm_stage_value
+(IF(BOUND(?t_prefix), IF(BOUND(?t_suffix), CONCAT(?t_prefix, ?t_suffix), ?t_prefix), IF(BOUND(?t_suffix), ?t_suffix, "")) AS ?t_stage)
+(IF(BOUND(?n_prefix), IF(BOUND(?n_suffix), CONCAT(?n_prefix, ?n_suffix), ?n_prefix), IF(BOUND(?n_suffix), ?n_suffix, "")) AS ?n_stage)
+(IF(BOUND(?m_prefix), IF(BOUND(?m_suffix), CONCAT(?m_prefix, ?m_suffix), ?m_prefix), IF(BOUND(?m_suffix), ?m_suffix, "")) AS ?m_stage)
+?grade ?estrogen ?progesteron
+
+(GROUP_CONCAT(DISTINCT ?biopsy_code; SEPARATOR="; ") AS ?biopsy_codes) (GROUP_CONCAT(DISTINCT ?biopsy_label; SEPARATOR="; ") AS ?biopsy_labels)
+(GROUP_CONCAT(DISTINCT ?operation_code; SEPARATOR="; ") AS ?operation_codes) (GROUP_CONCAT(DISTINCT ?operation_label; SEPARATOR="; ") AS ?operation_labels)
+(GROUP_CONCAT(DISTINCT ?radiotherapy_code; SEPARATOR="; ") AS ?radiotherapy_codes) (GROUP_CONCAT(DISTINCT ?radiotherapy_label; SEPARATOR="; ") AS ?radiotherapy_labels)
+(GROUP_CONCAT(DISTINCT ?reconstruction_code; SEPARATOR="; ") AS ?reconstruction_codes) (GROUP_CONCAT(DISTINCT ?reconstruction_label; SEPARATOR="; ") AS ?reconstruction_labels)
+(GROUP_CONCAT(DISTINCT ?excision_code; SEPARATOR="; ") AS ?excision_codes) (GROUP_CONCAT(DISTINCT ?excision_label; SEPARATOR="; ") AS ?excision_labels)
+WHERE {
+    # Current date and year
+    BIND(now() AS ?currentDateTime) .
+    BIND(YEAR(?currentDateTime) AS ?currentYear)
+
+    # Diagnosis, Date of diagnosis, Age at diagnosis (Birth Date), Laterality, Topography
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?diagnosis_code ?diagnosis_label ?diagnosis_date ?BirthDateTime ?laterality ?topography
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+                ?patient aidava:hasBirthDateTime ?BirthDateTime .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+                    ?diagnosis sphn:hasCode|anno:hasCode ?diagnosis_code .
+                    OPTIONAL { ?diagnosis sphn:hasRecordDateTime ?diagnosis_date . }
+                    OPTIONAL { ?diagnosis sphn:hasBodySite ?diagnosis_site . }
+    			}
+
+    			OPTIONAL {?diagnosis_code skos:prefLabel ?diagnosis_label .}
+    			{VALUES ?diagnosis_code {snomed:126926005} }
+    			UNION
+    			{?diagnosis_code rdfs:subClassOf snomed:126926005 }
+                # laterality
+                OPTIONAL {
+                    ?diagnosis_site sphn:hasLaterality ?laterality_object .
+                    ?laterality_object sphn:hasCode ?laterality_code .
+                    ?laterality_code skos:prefLabel ?laterality .
+                    ?diagnosis_site sphn:hasCode ?diagnosis_site_code .
+                    ?diagnosis_site_code skos:prefLabel ?topography .
+                }
+        	}
+		}
+    }
+
+    # Sex
+    OPTIONAL {
+		{
+			SELECT *
+			WHERE {
+				GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+				{
+					?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+				}
+				GRAPH ?g {
+					?patient aidava:hasAdministrativeGender ?AdministrativeGender .
+					?AdministrativeGender rdf:type sphn:AdministrativeGender .
+					?AdministrativeGender sphn:hasCode ?gender_code .
+				}
+			}
+		}
+	}
+    BIND(
+        IF(?gender_code = snomed:248153007, "male",
+            IF(?gender_code = snomed:248152002, "female", "unknown"))
+        AS ?sex
+    )
+
+    # Prior BC
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?history_code ?history_label
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+                    ?history rdf:type sphn:ProblemCondition .
+					?history sphn:hasCode|anno:hasCode ?history_code_general .
+    			}
+#                OPTIONAL {
+#					?history sphn:hasDateTime|sphn:hasOnsetDateTime|sphn:hasRecordDateTime ?history_date_time .
+#				}
+                # Take into account terminologies with mapping to snomed:
+				{
+					{BIND(?history_code_general AS ?history_code)}
+					UNION
+					{?history_code skos:exactMatch ?history_code_general}
+				}
+    			OPTIONAL {?history_code skos:prefLabel ?history_label .}
+
+    			{VALUES ?history_code {snomed:429087003 } }
+    			UNION
+    			{?history_code rdfs:subClassOf snomed:429087003 }
+        	}
+		}
+    }
+    BIND(IF(BOUND(?history_code), "yes", "no") AS ?prior_bc)
+
+    # Radiological tumor size
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?size_of_neoplasm ?unit_size_of_neoplasm ?tumor_size_unit_code
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+        			?tumor_size rdf:type sphn:Measurement .
+					?tumor_size sphn:hasCode|anno:hasCode ?tumor_size_code_general .
+                    OPTIONAL {
+						?tumor_size sphn:hasQuantity ?tumor_size_quantity .
+					}
+					OPTIONAL {
+						?tumor_size_quantity sphn:hasValue ?size_of_neoplasm .
+					}
+					OPTIONAL {
+						?tumor_size_quantity sphn:hasUnit ?tumor_size_unit_object .
+					}
+    			}
+                OPTIONAL {
+					?tumor_size_unit_object sphn:hasCode ?tumor_size_unit_code .
+					?tumor_size_unit_code rdfs:label ?unit_size_of_neoplasm .
+				}
+                # Take into account terminologies with mapping to snomed:
+				{
+					{BIND(?tumor_size_code_general AS ?tumor_size_code)}
+					UNION
+					{?tumor_size_code skos:exactMatch ?tumor_size_code_general}
+				}
+    			OPTIONAL {?tumor_size_code skos:prefLabel ?tumor_size_code .}
+    			{VALUES ?tumor_size_code {snomed:263605001} }
+    			UNION
+    			{?tumor_size_code rdfs:subClassOf snomed:263605001 }
+
+
+        	}
+		}
+    }
+
+    # TNM Stage
+    OPTIONAL {
+		{
+			SELECT *
+			WHERE {
+				GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+				{
+					?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+				}
+				GRAPH ?g {
+					?tnm_stage rdf:type sphn:TNMClassification .
+                    OPTIONAL {?tnm_stage sphn:hasValue ?tnm_stage_value .}
+                    OPTIONAL {?tnm_stage sphn:hasTPrefix ?t_prefix .}
+                    OPTIONAL {?tnm_stage sphn:hasTSuffix ?t_suffix .}
+  					OPTIONAL {?tnm_stage sphn:hasNPrefix ?n_prefix .}
+                    OPTIONAL {?tnm_stage sphn:hasNSuffix ?n_suffix .}
+					OPTIONAL {?tnm_stage sphn:hasMPrefix ?m_prefix .}
+                    OPTIONAL {?tnm_stage sphn:hasMSuffix ?m_suffix .}
+				}
+			}
+		}
+	}
+
+    # Tumor Grade
+    OPTIONAL {
+		{
+			SELECT *
+			WHERE {
+				GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+				{
+					?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+				}
+				GRAPH ?g {
+					?tumor_grade rdf:type sphn:TumorGrade .
+                    OPTIONAL {?tumor_grade sphn:hasCode ?tumor_grade_code .}
+				}
+                OPTIONAL {?tumor_grade_code skos:prefLabel ?grade .}
+			}
+		}
+	}
+
+    # Estrogen
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?estrogen
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+        			?receptor_estrogen rdf:type sphn:Measurement .
+					?receptor_estrogen sphn:hasCode|anno:hasCode ?receptor_estrogen_code_general .
+                    OPTIONAL {?receptor_estrogen sphn:hasQualitativeResultCode ?estrogen_result_code .}
+    			}
+                OPTIONAL{?estrogen_result_code skos:prefLabel ?estrogen .}
+                # Take into account terminologies with mapping to snomed:
+				{
+					{BIND(?receptor_estrogen_code_general AS ?receptor_estrogen_code)}
+					UNION
+					{?receptor_estrogen_code skos:exactMatch ?receptor_estrogen_code_general}
+				}
+    			OPTIONAL {?receptor_estrogen_code skos:prefLabel ?receptor_estrogen_code .}
+    			{VALUES ?receptor_estrogen_code {snomed:445028008} }
+    			UNION
+    			{?receptor_estrogen_code rdfs:subClassOf snomed:445028008 }
+
+        	}
+		}
+    }
+
+    # Progesteron
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?progesteron
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+        			?receptor_progesteron rdf:type sphn:Measurement .
+					?receptor_progesteron sphn:hasCode|anno:hasCode ?receptor_progesteron_code_general .
+                    OPTIONAL {?receptor_progesteron sphn:hasQualitativeResultCode ?progesteron_result_code .}
+    			}
+                OPTIONAL{?progesteron_result_code skos:prefLabel ?progesteron .}
+                # Take into account terminologies with mapping to snomed:
+				{
+					{BIND(?receptor_progesteron_code_general AS ?receptor_progesteron_code)}
+					UNION
+					{?receptor_progesteron_code skos:exactMatch ?receptor_progesteron_code_general}
+				}
+    			OPTIONAL {?receptor_progesteron_code skos:prefLabel ?receptor_progesteron_code .}
+    			{VALUES ?receptor_progesteron_code {snomed:445029000} }
+    			UNION
+    			{?receptor_progesteron_code rdfs:subClassOf snomed:445029000 }
+
+        	}
+		}
+    }
+
+    #OPERATION
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?operation_code ?operation_label
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+        			?operation sphn:hasCode|anno:hasCode ?operation_code .
+    			}
+
+    			OPTIONAL {?operation_code skos:prefLabel ?operation_label .}
+
+    			{VALUES ?operation_code {snomed:392090004} }
+    			UNION
+    			{?operation_code rdfs:subClassOf snomed:392090004 }
+        	}
+		}
+    }
+
+    #BIOPSY
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?biopsy_code ?biopsy_label
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+        			?biopsy sphn:hasCode|anno:hasCode ?biopsy_code .
+    			}
+
+    			OPTIONAL {?biopsy_code skos:prefLabel ?biopsy_label .}
+
+    			{VALUES ?biopsy_code {snomed:122548005} }
+    			UNION
+    			{?biopsy_code rdfs:subClassOf snomed:122548005 }
+        	}
+		}
+    }
+    #RADIOTHERAPY
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?radiotherapy_code ?radiotherapy_label
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+        			?radiotherapy sphn:hasCode|anno:hasCode ?radiotherapy_code .
+    			}
+
+    			OPTIONAL {?radiotherapy_code skos:prefLabel ?radiotherapy_label .}
+
+    			{VALUES ?radiotherapy_code {snomed:428923005} }
+    			UNION
+    			{?radiotherapy_code rdfs:subClassOf snomed:428923005 }
+        	}
+		}
+    }
+
+    #RECONSTRUCTION
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?reconstruction_code ?reconstruction_label
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+        			?reconstruction sphn:hasCode|anno:hasCode ?reconstruction_code .
+    			}
+
+    			OPTIONAL {?reconstruction_code skos:prefLabel ?reconstruction_label .}
+
+    			{VALUES ?reconstruction_code {snomed:33496007} }
+    			UNION
+    			{?reconstruction_code rdfs:subClassOf snomed:33496007 }
+        	}
+		}
+    }
+
+    #EXCISION
+    OPTIONAL {
+    	{
+        	SELECT DISTINCT ?patient ?excision_code ?excision_label
+        	WHERE {
+            	?patient rdf:type aidava:Patient .
+    			GRAPH <http://rdf.aidava.eu/metadata#metagraph>
+					{
+						?g <http://rdf.aidava.eu/metadata#belongsTo> ?patient .
+					}
+    			GRAPH ?g {
+        			?excision sphn:hasCode|anno:hasCode ?excision_code .
+    			}
+
+    			OPTIONAL {?excision_code skos:prefLabel ?excision_label .}
+
+    			{VALUES ?excision_code {snomed:1231734007} }
+    			UNION
+    			{?excision_code rdfs:subClassOf snomed:1231734007 }
+        	}
+		}
+    }
+
+}
+GROUP BY ?patient ?diagnosis_date ?BirthDateTime ?sex ?prior_bc ?size_of_neoplasm ?unit_size_of_neoplasm ?laterality ?topography ?tnm_stage_value ?t_prefix ?t_suffix ?n_prefix ?n_suffix ?m_prefix ?m_suffix ?grade ?estrogen ?progesteron

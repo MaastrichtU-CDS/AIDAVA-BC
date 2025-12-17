@@ -1,0 +1,10 @@
+Source;Table;HumanReadableName;VariableName;IsPrimaryKey;TableReference;VariableReference;IsMandatory;PrimitiveDataType;FHIRPrimitiveType;ValueRestriction;ValueRestrictionType;Description
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Patient ID;GEN_IDNUMBER;TRUE;GEN_PATIENT;GEN_IDNUMBER;TRUE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Table Identifier;TABLE_IDENTIFIER;TRUE;GEN_PATIENT;;TRUE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Dermatitis;BR_DERMATITIS;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Lymphedema;BR_LYMPHEDEMA;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Rib fracture;BR_RIBFRACT1;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Heart toxicity;BR_HEART_FAIL;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Radiation Pneumonitis;BR_RAD_PNEUM;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Hypertension;BR_HYPERTENSION;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);CTC;Diabetes;BR_DM;FALSE;BR;;FALSE;string;string;;;NA

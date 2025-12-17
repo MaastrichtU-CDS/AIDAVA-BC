@@ -1,0 +1,13 @@
+Source;Table;HumanReadableName;VariableName;IsPrimaryKey;TableReference;VariableReference;IsMandatory;PrimitiveDataType;FHIRPrimitiveType;ValueRestriction;ValueRestrictionType;Description
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Patient ID;GEN_IDNUMBER;TRUE;GEN_PATIENT;GEN_IDNUMBER;TRUE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Table Identifier;TABLE_IDENTIFIER;TRUE;GEN_PATIENT;;TRUE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Breast/axillary infection;ANXILLARY_INFECTION;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Hematoma;HEMATOMA;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Seroma;SEROMA;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Dyphagia;DYSPHAGIA;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Pain;PAIN;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Edema;EDEMA;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;WHO PS;WHO_PS;FALSE;BR;;FALSE;double;decimal;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Menopausal status at diagnosis;MENOPAUSAL;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;COPD;COPD;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Algemeen Anamnese Mamma;Chronische pijnmedicatie;PAIN_MEDICATIE;FALSE;BR;;FALSE;string;string;;;NA

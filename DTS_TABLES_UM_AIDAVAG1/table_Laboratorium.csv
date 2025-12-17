@@ -1,0 +1,21 @@
+Source;Table;HumanReadableName;VariableName;IsPrimaryKey;TableReference;VariableReference;IsMandatory;PrimitiveDataType;FHIRPrimitiveType;ValueRestriction;ValueRestrictionType;Description
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Patient ID;GEN_IDNUMBER;TRUE;GEN_PATIENT;GEN_IDNUMBER;TRUE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Table Identifier;TABLE_IDENTIFIER;TRUE;GEN_PATIENT;;TRUE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;First name ;FIRST_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Last name;LAST_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Glucose;GLUCOSE_GLUCOSE;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Hemolytisch ;HEMOLYTISCH_HEMOLYTISCH;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Hemoglobine;HEMOGLOBINE_HEMOGLOBINE;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Hematocriet;HEMATOCRIET_L;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Kalium ;KALIUM_L;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;eGFR(CKD-EPI) ;EGFR_M2;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Ery's urine ;ERY'S_UL;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Leucocyten urine ;LEUCOCYTEN_UL;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Kreatinine ;KREATININE_L;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;LDH 318;LDH_L;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Calcium;CALCIUM_L;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Chloride;CHLORIDE_L;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Lymfocyten;LYMFOCYTEN_LYMFOCYTEN;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Erytrocyten;ERYTROCYTEN_I;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;Fosfaat;FOSFAAT_L;FALSE;BR;;FALSE;string;string;;;NA
+Hix-Chipsoft (MAASTRO's EHR system);Laboratorium;GGT;GGT_L;FALSE;BR;;FALSE;string;string;;;NA

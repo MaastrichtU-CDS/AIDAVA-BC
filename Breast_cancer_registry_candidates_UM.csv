@@ -1,0 +1,163 @@
+Source;Classification;HumanReadableName;VariableName;Match IKNL registry;Match DICA registry
+Hix-Chipsoft (MAASTRO's EHR system);Clinical assessment score;WHO PS;WHO_PS;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Clinical T-stage;BR_BL_CTSTAGE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Clinical N-stage;BR_BL_CNSTAGE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Clinical M-stage;BR_BL_CMSTAGE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Diagnose date;DIAGNOSE_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Age at diagnosis;GEN_AGE_DIAGN;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Date;DATE;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Diagnose;DIAGNOSE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Lesion ID;BR_LES_ID;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Radiological tumor size;TUMOUR_SIZE;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Diagnosis;Laterality;BR_BL_LATERALTIY;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Document Date;DOCUMENT_DATE;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Signing Physician;SIGN_PHYS;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Hospital Name;HOSPITAL_NAME;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Referral hospital name ;REFERRAL_HOSPITAL_NAME;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Document  Date;DOCUMENT_DATE;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Document Version;DOCUMENT_VERSION;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Table Identifier;TABLE_IDENTIFIER;no;no
+ARIA-eclipse/Hix Chipsoft;Document information;Hospital Name;HOSPITAL_NAME;no;yes
+ARIA-eclipse/Hix Chipsoft;Document information;Referral hospital name ;REFERRAL_HOSPITAL_NAME;no;no
+ARIA-eclipse/Hix Chipsoft;Document information;Document  Date;DOCUMENT_DATE;no;no
+ARIA-eclipse/Hix Chipsoft;Document information;Document Version;DOCUMENT_VERSION;no;no
+ARIA-eclipse/Hix Chipsoft;Document information;Signing Physician;SIGN_PHYS;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Hospital Name;HOSPITAL_NAME;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Referral hospital name ;REFERRAL_HOSPITAL_NAME;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Document  Date;DOCUMENT_DATE;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Document Version;DOCUMENT_VERSION;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Signing Physician;SIGN_PHYS;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Document information;Table Identifier;TABLE_IDENTIFIER;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Regional recurrence;BRTUM_REGIO_REC;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;If YES, date of regional recurrence;BRTUM_DATE_REGIOREC;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Distant metastases;BRTUM_DIST_METS;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;If YES, date of distant metastases;BRTUM_DATE_DISTMETS;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Postoperative multi-disciplinary team meeting;BR_MDT_POST;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Preoperative multi-disciplinary team meeting;BR_MDT_PREOP;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Was cancer found in screening?;BR_SCR;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Is patient receiving palliative treatment?;BR_TR_INTENT;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Is patient enrolled in registred trial?;BR_PAT_CL_TR;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Progesteron receptor;PROGESTERON_RECEPTOR;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;MIBl (Molecular Breast Imaging in the Lobular subtype);MIBL_MIBL;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Date of last follow up;BRTUM_DATE_LASTFU;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Status at last follow up;BRTUM_STATUS_LASTFU;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Local recurrence;BRTUM_LOCAL_REC;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;If YES, date of local recurrence;BRTUM_DATE_LOCALREC;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Follow up;Regional recurrence;BRTUM_REGIO_REC;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);History;Menopausal status at diagnosis;MENOPAUSAL;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;COPD;COPD;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);History;Chronische pijnmedicatie;PAIN_MEDICATIE;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);History;Allergies date;ALLERGIES_DATE;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);History;Allergies type;ALLERGIES_TYPE;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);History;Prior ipsilateral BC;BR_PR_BL_LATERALTIY;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);History;Smoking at the time of diagnosis;GEN_SMOKING;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;Date of surgery primary tumour;BR_BL_DATE_SURG;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;Type of surgery;BR_BL_TYPE_SURG;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;Re-resection;BR_BL_RE_RESEC;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;If yes, Date of re-resection;BR_BL_RE_RESEC_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;Breast reconstruction;BR_BL_RE_REC;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;If yes, Date of reconstructions;BR_BL_RE_REC_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;Axillary lymph node dissection performed;BR_AX_LN_DISSECT;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History;If yes, Date of axillary lymph node dissection;BR_AX_LN_DISSECT_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);History/Toxicity?;Hypertension;BR_HYPERTENSION;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);History/Toxicity?;Diabetes;BR_DM;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Glucose;GLUCOSE_GLUCOSE;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Hemolytisch ;HEMOLYTISCH_HEMOLYTISCH;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Hemoglobine;HEMOGLOBINE_HEMOGLOBINE;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Hematocriet;HEMATOCRIET_L;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Kalium ;KALIUM_L;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;eGFR(CKD-EPI) ;EGFR_M2;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Ery's urine ;ERY'S_UL;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Leucocyten urine ;LEUCOCYTEN_UL;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Kreatinine ;KREATININE_L;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;LDH 318;LDH_L;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Calcium;CALCIUM_L;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Chloride ;CHLORIDE_L;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Lymfocyten ;LYMFOCYTEN_LYMFOCYTEN;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Erytrocyten ;ERYTROCYTEN_I;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;Fosfaat ;FOSFAAT_L;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Lab test;GGT;GGT_L;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Number of involved nodes;BR_BL_NODES_INVOLV;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Conclusion lymph node mapping;BR_BL_NODES_MAP;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Date of diagnosis invasive / insitu component;BR_BL_DATE_DIAG;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Histology invasive breast cancer;BR_BL_INV_HISTO;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Size invasive component on pathology;BR_BL_IVN_SIZE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Tumour location;BR_BL_TUM_LOC;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Grade of differentiation invasive cancer;BR_BL_INV_GRADE_DIFF;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Minimal resection margins invasive breast cancer;BR_BL_MIN_RES_MARG_INV;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Progesterone receptor;BR_BL_PROGESTRONE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Oestrogen receptor;BR_BL_OESTROGEN;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;HER2 receptor;BR_BL_HER2;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Histology in situ component;BR_BL_SITU_HISTO;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Grade of differentiation in situ component;BR_BL_SITU_GRADE_DIFF;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Size of DCIS at pathology;BR_BL_SIZE_DCIS;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;Minimal resection margins non invasive;BR_BL_RES_MARG_SITU;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;pT-stage;BR_BL_PTSTAGE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;ypT-stage;BR_BL_YPTSTAGE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;pN-stage;BR_BL_PNSTAGE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;ypN-stage;BR_BL_YPNSTAGE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Pathology;pM-stage;BR_BL_PMSTAGE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;First name ;FIRST_NAME;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Last name;LAST_NAME;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Birth Date;BIRTH_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+ARIA-eclipse/Hix Chipsoft;Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;First name ;FIRST_NAME;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Last name;LAST_NAME;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Birth Date;BIRTH_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Hospital Name;HOSPITAL_NAME;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Signing Physician;SIGN_PHYS;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Referral hospital name ;REFERRAL_HOSPITAL_NAME;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;First name ;FIRST_NAME;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Last name;LAST_NAME;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+ARIA-eclipse/Hix Chipsoft;Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+ARIA-eclipse/Hix Chipsoft;Patient information;First name ;FIRST_NAME;no;no
+ARIA-eclipse/Hix Chipsoft;Patient information;Last name;LAST_NAME;no;yes
+ARIA-eclipse/Hix Chipsoft;Patient information;Birth Date;BIRTH_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;First name ;FIRST_NAME;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Last name;LAST_NAME;no;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Birth Date;BIRTH_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Sex;GEN_SEX;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;BMI;GEN_BMI;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Patient information;Patient ID;GEN_IDNUMBER;yes;yes
+ARIA-eclipse/Hix Chipsoft;Radiotherapy;Target volume: Breast;BR_BREAST;yes;yes
+ARIA-eclipse/Hix Chipsoft;Radiotherapy;Target volume: Partial breast;BR_PART_BREAST;yes;yes
+ARIA-eclipse/Hix Chipsoft;Radiotherapy;Target volume: Chest wall;BR_CHEST_WALL;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Side effects;Breast/axillary infection;ANXILLARY_INFECTION;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Side effects;Hematoma;HEMATOMA;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Side effects;Seroma;SEROMA;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Side effects;Dyphagia;DYSPHAGIA;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Side effects;Pain;PAIN;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Side effects;Edema;EDEMA;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Surgery information;Number of nodes resected;BR_BL_NODES_RESEC;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Table information;Table Identifier;TABLE_IDENTIFIER;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Table information;Table Identifier;TABLE_IDENTIFIER;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Table information;Table Identifier;TABLE_IDENTIFIER;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Toxicity;Dermatitis;BR_DERMATITIS;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Toxicity;Lymphedema;BR_LYMPHEDEMA;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Toxicity;Rib fracture;BR_RIBFRACT1;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Toxicity;Heart toxicity;BR_HEART_FAIL;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Toxicity;Radiation Pneumonitis;BR_RAD_PNEUM;no;no
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Neoadjuvant chemotherapy;BR_CHEMO;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Date start neoadjuvant chemotherapy;BR_CHEMO_START_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Adjuvant chemotherapy;BR_CHEMO_ADJ;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Date start adjuvant chemotherapy;BR_CHEMO_ADJ_START_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Neoadjuvant endocrine therapy;BR_END_TR;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Date start neoadjuvant endocrine therapy;BR_END_TR_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Adjuvant endocrine therapy;BR_END_TR_ADJ;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Date start adjuvant endocrine therapy;BR_END_TR_ADJ_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Neoadjuvant anti HER2 therapy;BR_HER2_ADJ;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Date start neoadjuvant anti HER2 therapy;BR_HER2_ADJ_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Adjuvant anti HER2 therapy;BR_ANTI_HER2_ADJ;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Date start adjuvant anti HER2 therapy;BR_ANTI_HER2_ADJ_DATE;yes;yes
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Neoadjuvant radiotherapy;BR_RT;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Start neoadjuvant radiotherapy;BR_RT_START_DATE;yes;no
+Hix-Chipsoft (MAASTRO's EHR system);Treatment;Adjuvant radiotherapy;GEN_RT_ADJ;yes;no

@@ -1,0 +1,13 @@
+Source;Table;HumanReadableName;VariableName;IsPrimaryKey;TableReference;VariableReference;IsMandatory;PrimitiveDataType;FHIRPrimitiveType;ValueRestriction;ValueRestrictionType;Description;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Patient ID;GEN_IDNUMBER;TRUE;GEN_PATIENT;GEN_IDNUMBER;TRUE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;First name ;FIRST_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Last name;LAST_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Birth Date;BIRTH_DATE;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Hospital Name;HOSPITAL_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Referral hospital name;REFERRAL_HOSPITAL_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Document Date;DOCUMENT_DATE;FALSE;GEN_PATIENT;;TRUE;date;date;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Document Version;DOCUMENT_VERSION;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Signing Physician;SIGN_PHYS;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Target volume: Breast;BR_BREAST;FALSE;BR;;FALSE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Target volume: Partial breast;BR_PART_BREAST;FALSE;BR;;FALSE;string;string;;;NA;
+ARIA-eclipse/Hix Chipsoft;Structure properties;Target volume: Chest wall;BR_CHEST_WALL;FALSE;BR;;FALSE;string;string;;;NA;

@@ -1,0 +1,8 @@
+Source;Table;HumanReadableName;VariableName;IsPrimaryKey;TableReference;VariableReference;IsMandatory;PrimitiveDataType;FHIRPrimitiveType;ValueRestriction;ValueRestrictionType;Description;
+Hix-Chipsoft (MAASTRO's EHR system);Zorglijn;Patient ID;GEN_IDNUMBER;TRUE;GEN_PATIENT;GEN_IDNUMBER;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);Zorglijn;Table Identifier;TABLE_IDENTIFIER;TRUE;GEN_PATIENT;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);Zorglijn;Date of last follow up;BRTUM_DATE_LASTFU;FALSE;BR;;FALSE;date;date;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);Zorglijn;Status at last follow up;BRTUM_STATUS_LASTFU;FALSE;BR;;FALSE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);Zorglijn;Local recurrence;BRTUM_LOCAL_REC;FALSE;BR;;FALSE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);Zorglijn;If YES, date of local recurrence;BRTUM_DATE_LOCALREC;FALSE;BR;;FALSE;date;date;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);Zorglijn;Regional recurrence;BRTUM_REGIO_REC;FALSE;BR;;FALSE;string;string;;;NA;

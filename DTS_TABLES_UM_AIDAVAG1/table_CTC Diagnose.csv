@@ -1,0 +1,13 @@
+Source;Table;HumanReadableName;VariableName;IsPrimaryKey;TableReference;VariableReference;IsMandatory;PrimitiveDataType;FHIRPrimitiveType;ValueRestriction;ValueRestrictionType;Description;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Clinical T-stage;BR_BL_CTSTAGE;FALSE;BR;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Clinical N-stage;BR_BL_CNSTAGE;FALSE;BR;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Clinical M-stage;BR_BL_CMSTAGE;FALSE;BR;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Patient ID;GEN_IDNUMBER;TRUE;GEN_PATIENT;GEN_IDNUMBER;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;First name;FIRST_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Last name;LAST_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Birth Date;BIRTH_DATE;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Document Date;DOCUMENT_DATE;FALSE;GEN_PATIENT;;TRUE;date;date;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Signing Physician;SIGN_PHYS;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Hospital Name;HOSPITAL_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Referral hospital name;REFERRAL_HOSPITAL_NAME;FALSE;GEN_PATIENT;;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);CTC Diagnose;Number of nodes resected;BR_BL_NODES_RESEC;FALSE;BR;;TRUE;double;decimal;;;NA;

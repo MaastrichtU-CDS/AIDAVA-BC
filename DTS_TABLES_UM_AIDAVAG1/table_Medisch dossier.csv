@@ -1,0 +1,3 @@
+Source;Table;HumanReadableName;VariableName;IsPrimaryKey;TableReference;VariableReference;IsMandatory;PrimitiveDataType;FHIRPrimitiveType;ValueRestriction;ValueRestrictionType;Description;
+Hix-Chipsoft (MAASTRO's EHR system);Medisch dossier;Patient ID;GEN_IDNUMBER;TRUE;GEN_PATIENT;GEN_IDNUMBER;TRUE;string;string;;;NA;
+Hix-Chipsoft (MAASTRO's EHR system);Medisch dossier;Allergies date;ALLERGIES_DATE;FALSE;GEN_PATIENT;;FALSE;date;date;;;NA;

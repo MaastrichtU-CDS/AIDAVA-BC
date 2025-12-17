@@ -1,0 +1,15 @@
+Categories;Variable description
+Demographics;Birth date
+Demographics;Gender
+Demographics;Body mass index (BMI)
+Diagnosis;Clinical T-stage
+Diagnosis;Clinical N-stage
+Diagnosis;Clinical M-stage
+Diagnosis;Diagnosis date
+Diagnosis;Age at diagnosis
+Diagnosis;Laterality
+Medical history;Menopausal status at diagnosis
+Pathological report;Number of involved nodes
+Therapy;Neoadjuvant chemotherapy
+Therapy;Adjuvant chemotherapy
+Therapy;Adjuvant radiotherapy
