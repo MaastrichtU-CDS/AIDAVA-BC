@@ -7,3 +7,5 @@ This Github repository includes:
 3. SPARQL query examples from the personal health knowledge graphs to develop a local breast cancer registry
 4. Data elements of breast cancer registries
 5. Sample questionnaire of medical and digital literacy
+6. AIDAVA Reference Ontology files
+7. Figure for the time spent by patient to answer the system questions
